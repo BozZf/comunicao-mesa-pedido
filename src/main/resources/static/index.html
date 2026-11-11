@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#193d31" />
+    <title>Mesa & Forno • Seu pedido</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/"
+        >MESA <i>&</i> FORNO<span>PIZZA BOA, SEM FILA.</span></a
+      ><span class="pill" id="table">Pedido na mesa</span>
+    </header>
+    <div class="demo" id="demo" hidden>
+      AMBIENTE DE DEMONSTRAÇÃO • Nenhum pagamento real é realizado
+    </div>
+    <main>
+      <section class="hero">
+        <span class="eyebrow">DO FORNO PARA A SUA MESA</span>
+        <h1>Escolha com calma.<br />A gente cuida do resto.</h1>
+        <p>
+          Pizza quentinha, bons encontros e nenhum tempo na fila.<br />Monte seu
+          pedido e pague direto pelo celular.
+        </p>
+        <div class="steps">
+          <span>01 · Escolha</span><span>02 · Pague</span
+          ><span>03 · Aproveite</span>
+        </div>
+      </section>
+      <p role="alert" id="message"></p>
+      <section id="tracking" class="tracking" hidden></section>
+      <div class="layout">
+        <section>
+          <div class="section-title">
+            <h2>O que vai ser hoje?</h2>
+            <span>Feito com carinho, aqui mesmo.</span>
+          </div>
+          <nav aria-label="Categorias" id="categories"></nav>
+          <div id="menu" class="menu"></div>
+        </section>
+        <aside>
+          <span class="eyebrow">SEU MOMENTO, SEU PEDIDO</span>
+          <h2>Sua seleção</h2>
+          <div id="cart"></div>
+          <label for="notes">Alguma observação?</label
+          ><textarea
+            id="notes"
+            maxlength="500"
+            placeholder="Ex.: sem cebola. Para alergias, fale com a equipe."
+          ></textarea>
+          <div class="total">
+            <span>Total</span><strong id="total">R$ 0,00</strong>
+          </div>
+          <button id="submit" class="primary" disabled>
+            Continuar para pagamento →
+          </button>
+          <p class="fine">
+            Pix ou cartão no checkout seguro.<br />O preparo começa após a
+            confirmação.
+          </p>
+        </aside>
+      </div>
+    </main>
+    <footer>
+      MESA & FORNO <span>Mais tempo para estar junto.</span
+      ><a href="/caixa.html">Acesso da equipe</a>
+    </footer>
+  </body>
+</html>

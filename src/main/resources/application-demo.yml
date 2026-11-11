@@ -1,0 +1,3 @@
+app:
+  payment-mode: demo
+  cashier-password: ${CASHIER_PASSWORD:demo-caixa-local}

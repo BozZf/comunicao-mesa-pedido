@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:h2:file:./data/mesa;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE}
+    username: ${DB_USER:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+server:
+  error:
+    include-message: never
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        same-site: strict
+app:
+  base-url: ${APP_BASE_URL:http://localhost:8080}
+  cashier-user: ${CASHIER_USER:caixa}
+  cashier-password: ${CASHIER_PASSWORD}
+  payment-mode: ${PAYMENT_MODE:mercadopago}
+  mp-token: ${MP_ACCESS_TOKEN:}

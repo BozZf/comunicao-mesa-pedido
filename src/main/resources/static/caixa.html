@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mesa & Forno • Caixa</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/caixa.js"></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/caixa.html"
+        >MESA & FORNO<span>PAINEL DA EQUIPE</span></a
+      ><span class="pill">Caixa & cozinha</span>
+    </header>
+    <main>
+      <section class="hero">
+        <span class="eyebrow">TUDO NO SEU TEMPO</span>
+        <h1>Pedidos da casa.</h1>
+        <p>Somente pedidos com pagamento confirmado entram na fila.</p>
+      </section>
+      <p id="message" role="alert"></p>
+      <div class="tools">
+        <button id="refresh">Atualizar pedidos</button
+        ><button id="tables-toggle">Mesas e QR Codes</button
+        ><label
+          ><input type="checkbox" id="completed" /> Mostrar entregues</label
+        >
+      </div>
+      <p id="updated" class="fine"></p>
+      <div id="orders" class="cash-grid"></div>
+      <section id="table-section" hidden>
+        <h2>Placas das mesas</h2>
+        <p>Imprima os QR Codes e coloque cada um na mesa indicada.</p>
+        <div class="tools">
+          <input
+            id="number"
+            type="number"
+            min="1"
+            max="999"
+            placeholder="Número da mesa"
+            aria-label="Número da mesa"
+          /><button id="add-table">Cadastrar mesa</button
+          ><button id="print">Imprimir placas</button>
+        </div>
+        <div id="tables" class="tables"></div>
+      </section>
+    </main>
+  </body>
+</html>
