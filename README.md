@@ -101,3 +101,9 @@ A conciliação é sequencial, adequada a baixo volume. Antes de ampliar, adicio
 Mantenha backup do PostgreSQL e proteção HTTPS; restrinja o caixa à equipe. A senha fixa do perfil demo serve somente para desenvolvimento.
 
 Referências oficiais: [Spring Boot](https://docs.spring.io/spring-boot/3.5/) e [Mercado Pago Checkout Pro](https://www.mercadopago.com.br/developers/pt/docs/checkout-pro/overview).
+
+## Arquivos de configuração no Git
+
+`.gitignore` e `.dockerignore` devem ser versionados: eles definem o que não entra em novos commits e no contexto de build do Docker. `.env.example` também deve ser versionado, com nomes das variáveis e valores ilustrativos, para permitir a configuração do projeto.
+
+O arquivo `.env` com credenciais reais, suas variantes (como `.env.production`), chaves, certificados, dados locais, logs e artefatos de build devem ficar fora do Git e do contexto do Docker. As regras de exclusão não removem arquivos já rastreados nem apagam segredos do histórico; caso uma credencial real seja publicada, revogue-a e trate o histórico separadamente.

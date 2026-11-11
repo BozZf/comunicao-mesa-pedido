@@ -1,5 +1,21 @@
+# Nunca enviar credenciais ou dados locais ao contexto do Docker
 .git
-target
-data
 .env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+data
+
+# Artefatos locais: o Docker recompila a aplicação
+target
 *.log
+*.hprof
+hs_err_pid*
+replay_pid*
+.idea
+.vscode
+.DS_Store

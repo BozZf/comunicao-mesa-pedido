@@ -1,7 +1,25 @@
+# Build e dados locais
 target/
 data/
+
+# Credenciais: somente o modelo sem segredos deve ser versionado
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Logs e diagnósticos da JVM
 *.log
+*.hprof
+hs_err_pid*
+replay_pid*
+
+# Configuração pessoal do editor e sistema
 .idea/
 .vscode/
 .DS_Store
