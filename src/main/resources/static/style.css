@@ -1,16 +1,23 @@
 :root {
-  --green: #193d31;
-  --cream: #f8f5ee;
-  --orange: #cb542e;
-  --muted: #6b7168;
+  --brand: #d32f2f;
+  --brand-dark: #3f0e0e;
+  --brand-hover: #b71c1c;
+  --canvas: #fafafa;
+  --surface: #ffffff;
+  --surface-muted: #f5f5f5;
+  --surface-tint: #fff1f1;
+  --border: #dddddd;
+  --border-brand: #efb3b3;
+  --ink: #333333;
+  --muted: #666666;
 }
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  background: var(--cream);
-  color: var(--green);
+  background: var(--canvas);
+  color: var(--ink);
   font:
     16px/1.5 system-ui,
     sans-serif;
@@ -26,17 +33,21 @@ footer {
   gap: 18px;
 }
 header {
-  border-bottom: 1px solid #deded2;
+  max-width: none;
+  padding-inline: max(40px, calc((100% - 1170px) / 2));
+  background: var(--brand-dark);
+  color: var(--surface);
+  border-bottom: 1px solid var(--brand-dark);
 }
 .brand {
   font-size: 23px;
   font-weight: 850;
   letter-spacing: 2px;
   text-decoration: none;
-  color: var(--green);
+  color: var(--surface);
 }
 .brand i {
-  color: var(--orange);
+  color: var(--brand);
 }
 .brand span {
   display: block;
@@ -44,7 +55,7 @@ header {
   letter-spacing: 3px;
 }
 .pill {
-  border: 1px solid #bbc7b7;
+  border: 1px solid #a66b6b;
   border-radius: 30px;
   padding: 8px 18px;
   font-size: 13px;
@@ -63,10 +74,13 @@ main {
 }
 .hero {
   padding: 64px 0 35px;
-  background: radial-gradient(ellipse at right, #e8e8d6, transparent 65%);
+  background: var(--brand);
+  color: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--brand);
+  clip-path: inset(0 -100vmax);
 }
 .eyebrow {
-  color: var(--orange);
+  color: var(--brand);
   font-size: 11px;
   letter-spacing: 2px;
   font-weight: 800;
@@ -80,8 +94,11 @@ h1 {
   letter-spacing: -2px;
 }
 .hero p {
-  color: var(--muted);
+  color: var(--surface);
   font-size: 16px;
+}
+.hero .eyebrow {
+  color: var(--surface);
 }
 .steps {
   display: flex;
@@ -122,14 +139,15 @@ nav {
 button {
   font: inherit;
   cursor: pointer;
-  border: 1px solid #d7d9ce;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #fffdf8;
-  color: var(--green);
+  background: var(--surface);
+  color: var(--brand);
   padding: 9px 15px;
 }
 button:hover {
-  border-color: var(--green);
+  border-color: var(--brand);
+  background: var(--surface-tint);
 }
 button:disabled {
   opacity: 0.5;
@@ -137,7 +155,7 @@ button:disabled {
 }
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid var(--orange);
+  outline: 3px solid var(--brand);
   outline-offset: 3px;
 }
 nav button {
@@ -146,9 +164,19 @@ nav button {
 }
 nav button.active,
 .primary {
-  background: var(--green);
-  color: white;
-  border-color: var(--green);
+  background: var(--brand);
+  color: var(--surface);
+  border-color: var(--brand);
+}
+nav button.active:hover,
+.primary:hover {
+  background: var(--brand-hover);
+  border-color: var(--brand-hover);
+}
+h2,
+.product h3,
+.product .bottom strong {
+  color: var(--brand);
 }
 .menu {
   display: grid;
@@ -156,9 +184,9 @@ nav button.active,
   gap: 16px;
 }
 .product {
-  border: 1px solid #dedfd4;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  background: #fffcf6;
+  background: var(--surface);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -166,7 +194,7 @@ nav button.active,
 .product .art {
   height: 110px;
   border-radius: 7px;
-  background: #eee7d7;
+  background: var(--surface-muted);
   display: grid;
   place-items: center;
   font-size: 64px;
@@ -194,8 +222,8 @@ nav button.active,
 aside {
   position: sticky;
   top: 25px;
-  background: white;
-  border: 1px solid #dedfd4;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 25px;
 }
@@ -211,14 +239,14 @@ label {
 textarea {
   width: 100%;
   min-height: 80px;
-  border: 1px solid #dbded2;
+  border: 1px solid var(--border);
   border-radius: 7px;
   padding: 10px;
   font: 12px/1.5 system-ui;
   resize: vertical;
 }
 .total {
-  border-top: 1px dashed #d6d9ce;
+  border-top: 1px dashed var(--border);
   margin: 20px 0;
   padding-top: 18px;
   display: flex;
@@ -241,7 +269,7 @@ textarea {
 }
 .cart-line {
   padding: 13px 0;
-  border-bottom: 1px solid #edf0e8;
+  border-bottom: 1px solid var(--border);
 }
 .cart-line strong {
   font-size: 13px;
@@ -260,22 +288,22 @@ textarea {
   margin-left: auto;
 }
 .tracking {
-  border: 1px solid #acbba4;
+  border: 1px solid var(--border-brand);
   border-radius: 12px;
-  background: #edf1e6;
+  background: var(--surface-tint);
   padding: 25px;
 }
 .tracking button {
   margin: 10px 8px 0 0;
 }
 #message:not(:empty) {
-  color: #9d2e1e;
-  background: #ffe9dc;
+  color: var(--brand-hover);
+  background: var(--surface-tint);
   padding: 14px;
   border-radius: 8px;
 }
 footer {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border);
   font-size: 12px;
 }
 footer span {
@@ -290,8 +318,8 @@ a {
   gap: 20px;
 }
 .ticket {
-  background: white;
-  border: 1px solid #ddd;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 22px;
 }
@@ -321,8 +349,8 @@ a {
   gap: 20px;
 }
 .table-card {
-  background: white;
-  border: 1px solid #ddd;
+  background: var(--surface);
+  border: 1px solid var(--border);
   padding: 15px;
   text-align: center;
 }
@@ -396,6 +424,16 @@ input {
   }
 }
 @media print {
+  .hero {
+    background: transparent;
+    box-shadow: none;
+    clip-path: none;
+  }
+  .hero,
+  .hero p,
+  .hero .eyebrow {
+    color: var(--ink);
+  }
   header,
   .tools,
   footer,
